@@ -73,7 +73,18 @@ let fqkkurl = $.getdata('fqkkurl')
 let fqkkhd = $.getdata('fqkkhd')
 let fqkey = ''
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
-
+if (process.env.FQKKURLARR && process.env.FQKKURLARR.indexOf('\n') > -1) {
+    fqkkurlArr = process.env.FQKKURLARR.split('\n');
+    console.log(`您的JKD_COOKIE选择的是用换行符隔开，共计 ${JKCookie.length} 个Cookie\n`)
+  } else if (process.env.FQKKURLARR) {
+    fqkkurlArr = process.env.FQKKURLARR.split()
+  }
+  if (process.env.FQKKHDARR && process.env.FQKKHDARR.indexOf('\n') > -1) {
+    fqkkhdArr = process.env.FQKKHDARR.split('\n');
+    console.log(`您的JKD_COOKIE选择的是用换行符隔开，共计 ${JKCookie.length} 个Cookie\n`)
+  } else if (process.env.FQKKHDARR) {
+    fqkkhdArr = process.env.FQKKHDARR.split()
+  }
 !(async () => {
   if (typeof $request !== "undefined") {
     await fqkkck()
