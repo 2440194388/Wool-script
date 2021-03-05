@@ -157,12 +157,12 @@ if (!hsheaderArr[0] && !hsbodyArr[0] && !hsurlArr[0]) {
     if (hsheaderArr[i]) {
       message = ''
       note = ''
-      var hsurl = hsurlArr[i];
-      var hsheader = hsheaderArr[i];
-      var hsbody = hsbodyArr[i];
-      var playurl = playurlArr[i];
-      var playheader = playheaderArr[i];
-      var playbody = playbodyArr[i];
+      // hsurl = hsurlArr[i];
+      // hsheader = hsheaderArr[i];
+      // hsbody = hsbodyArr[i];
+      // playurl = playurlArr[i];
+      // playheader = playheaderArr[i];
+      // playbody = playbodyArr[i];
       $.index = i + 1;
       console.log(`\n开始【抖音火山版${$.index}】`)
       //await ck()
