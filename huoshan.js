@@ -124,12 +124,12 @@ if (process.env.PLAYURL && process.env.PLAYURL.indexOf('#') > -1) {
   };
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
-	hsurlArr=hsurl
-    hsheaderArr=hsheader
-    hsbodyArr=hsbody
-    playurlArr=playurl
-    playheaderArr=playheader
-    playbodyArr=playbody
+hsurlArr=[hsurl]
+    hsheaderArr=[hsheader]
+    hsbodyArr=[hsbody]
+    playurlArr=[playurl]
+    playheaderArr=[playheader]
+    playbodyArr=[playbody]
  } else {
     hsurlArr=hsurl
     hsheaderArr=hsheader
