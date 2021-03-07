@@ -71,12 +71,16 @@ hostname = m.*
 const $ = new Env('番茄看看');
 const fqkkurlArr = [], fqkkhdArr = []
 let fqkk = $.getjson('fqkk', [])
+
 let fqkkBanfirstTask = $.getval('fqkkBanfirstTask') || 'false' // 禁止脚本执行首个任务，避免每日脚本跑首次任务导致微信限制
 let fqkkCkMoveFlag = $.getval('fqkkCkMove') || ''
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
 let concurrency = ($.getval('fqkkConcurrency') || '1') - 0; // 并发执行任务的账号数，默单账号循环执行
 concurrency = concurrency < 1 ? 1 : concurrency;
 let fqkktz = ''
+if (process.env.FQKK && process.env.FQKK.indexOf('\n') > -1) {
+  fqkk = process.env.FQKKURLARR.split()
+} 
 !(async () => {
   if (typeof $request !== "undefined") {
     await fqkkck();
@@ -94,6 +98,8 @@ let fqkktz = ''
         execAcList[idx] = [o];
       }
     });
+  }
+  
     $.log(`番茄看看当前设置的提现金额为: ${fqtx / 100} 元`, `----------- 共${acList.length}个账号分${execAcList.length}组去执行 -----------`);
     for (let arr of execAcList) {
       let allAc = arr.map(ac=>ac.no).join(', ');
@@ -201,19 +207,6 @@ async function fqkkCkMove() {
   for (let i = 1; i <= fqkkcount; i++) {
     fqkkurlArr.push($.getdata(`fqkkurl${i>1?i:''}`))
     fqkkhdArr.push($.getdata(`fqkkhd${i>1?i:''}`))
-  }
-  if (process.env.FQKKURLARR && process.env.FQKKURLARR.indexOf('\n') > -1) {
-    fqkkurlArr = process.env.FQKKURLARR.split('\n');
-    console.log(`您的JKD_COOKIE选择的是用换行符隔开，共计 ${JKCookie.length} 个Cookie\n`)
-  } else if (process.env.FQKKURLARR) {
-    fqkkurlArr = process.env.FQKKURLARR.split()
-  }
-  if (process.env.FQKKHDARR && process.env.FQKKHDARR.indexOf('\n') > -1) {
-    fqkkhdArr = process.env.FQKKHDARR.split('\n');
-    console.log(`您的JKD_COOKIE选择的是用换行符隔开，共计 ${JKCookie.length} 个Cookie\n`)
-  } else if (process.env.FQKKHDARR) {
-    fqkkhdArr = process.env.FQKKHDARR.split()
-  }
   if (fqkkhdArr.length > 0) {
     let existsId = fqkk.map(o => o.uid - 0);
     for (let i = 0, len = fqkkhdArr.length; i < len; i++) {
