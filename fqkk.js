@@ -78,7 +78,7 @@ let concurrency = ($.getval('fqkkConcurrency') || '1') - 0; // 并发执行任�
 concurrency = concurrency < 1 ? 1 : concurrency;
 let fqkktz = ''
 if (process.env.FQKK && process.env.FQKK.indexOf('\n') > -1) {
-  fqkk = process.env.FQKKURLARR.split()
+  fqkk = process.env.FQKK.split()
 }
 !(async () => {
   if (typeof $request !== "undefined") {
