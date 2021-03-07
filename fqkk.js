@@ -71,7 +71,6 @@ hostname = m.*
 const $ = new Env('番茄看看');
 const fqkkurlArr = [], fqkkhdArr = []
 let fqkk = $.getjson('fqkk', [])
-
 let fqkkBanfirstTask = $.getval('fqkkBanfirstTask') || 'false' // 禁止脚本执行首个任务，避免每日脚本跑首次任务导致微信限制
 let fqkkCkMoveFlag = $.getval('fqkkCkMove') || ''
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
@@ -80,7 +79,7 @@ concurrency = concurrency < 1 ? 1 : concurrency;
 let fqkktz = ''
 if (process.env.FQKK && process.env.FQKK.indexOf('\n') > -1) {
   fqkk = process.env.FQKKURLARR.split()
-} 
+}
 !(async () => {
   if (typeof $request !== "undefined") {
     await fqkkck();
@@ -98,8 +97,6 @@ if (process.env.FQKK && process.env.FQKK.indexOf('\n') > -1) {
         execAcList[idx] = [o];
       }
     });
-  }
-  
     $.log(`番茄看看当前设置的提现金额为: ${fqtx / 100} 元`, `----------- 共${acList.length}个账号分${execAcList.length}组去执行 -----------`);
     for (let arr of execAcList) {
       let allAc = arr.map(ac=>ac.no).join(', ');
@@ -113,7 +110,7 @@ if (process.env.FQKK && process.env.FQKK.indexOf('\n') > -1) {
         }
         ac.msg = msg;
       }
-      fqkktz += rtList.map(ac => `【账号${ac.no}】\n余额：${ac.gold}币\n今日奖励：${ac.score}\n已阅读数：${ac.num}\n待阅读数：${ac.rest}${ac.msg?'\n'+ac.msg:''}`).join('\n\n');
+      fqkktz += rtList.map(ac => `\n【账号${ac.no}】\n余额：${ac.gold}币\n今日奖励：${ac.score}\n已阅读数：${ac.num}\n待阅读数：${ac.rest}${ac.msg?'\n'+ac.msg:''}`).join('\n');
     }
   $.log('\n======== [脚本运行完毕,打印日志结果] ========\n'+fqkktz)  }
 })()
@@ -127,11 +124,11 @@ function execTask(ac, i) {
         let msg = await fqkk3(ac, '');
         if (ac.rest) {
    let skip = false;
-if(fqkkBanfirstTask == 'ture' && ac.num <= 0){
-        saip = ture;
+if(fqkkBanfirstTask == 'true' && ac.num <= 0){
+        skip = true;
 }
           if (ac.rest <= 0 || skip) {
-            $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段待阅读${ac.rest}次，跳过阅读`);
+            $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段待阅读${ac.rest}次，跳过阅读，\n您已开启了限制脚本首次阅读，请前去扫码手动阅读一次，如需关闭该功能请前往Boxjs关闭限制脚本跑每日首次任务`);
           } else {
             $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段待阅读${ac.rest}次，开始阅读\n`);
             let flag = 0;
@@ -192,8 +189,8 @@ async function fqkkck() {
       }
       fqkk[no] = {uid: userId, url: fqkkurl, hd: fqkkhd};
       $.setdata(JSON.stringify(fqkk, null, 2), 'fqkk');
-      $.log(fqkkurl);
-      $.log(fqkkhd);
+      $.log(fqkkhd)
+      $.log(fqkkurl)
       $.msg($.name, "", `番茄看看[账号${no+1}] ${status?'新增':'更新'}数据成功！`);
     } else {
       // 未获取到用户ID，提示
@@ -207,6 +204,7 @@ async function fqkkCkMove() {
   for (let i = 1; i <= fqkkcount; i++) {
     fqkkurlArr.push($.getdata(`fqkkurl${i>1?i:''}`))
     fqkkhdArr.push($.getdata(`fqkkhd${i>1?i:''}`))
+  }
   if (fqkkhdArr.length > 0) {
     let existsId = fqkk.map(o => o.uid - 0);
     for (let i = 0, len = fqkkhdArr.length; i < len; i++) {
