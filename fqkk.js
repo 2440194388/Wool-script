@@ -79,7 +79,7 @@ concurrency = concurrency < 1 ? 1 : concurrency;
 let fqkktz = ''
 if (process.env.FQKK && process.env.FQKK.indexOf('\n') > -1) {
   fqkk = process.env.FQKK
-  let fqkk = JSON.parse(fqkk)
+  fqkk = JSON.parse(fqkk)
 }
 !(async () => {
   if (typeof $request !== "undefined") {
