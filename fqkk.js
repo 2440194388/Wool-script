@@ -78,7 +78,8 @@ let concurrency = ($.getval('fqkkConcurrency') || '1') - 0; // 并发执行任�
 concurrency = concurrency < 1 ? 1 : concurrency;
 let fqkktz = ''
 if (process.env.FQKK && process.env.FQKK.indexOf('\n') > -1) {
-  fqkk = process.env.FQKK.json()
+  fqkk = process.env.FQKK
+  fqkk = fqkk.json()
 }
 !(async () => {
   if (typeof $request !== "undefined") {
