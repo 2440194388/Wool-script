@@ -161,6 +161,7 @@ if ($.isNode() && process.env.FL_flwURL) {
   
   
 }
+/*
 if (COOKIE.flwurlVal) {
   FL_COOKIES = {
     "flwurlVal": COOKIE.flwurlVal.split('\n'),
@@ -171,6 +172,7 @@ if (COOKIE.flwurlVal) {
   }
   Length = FL_COOKIES.flwurlVal.length;
 }
+*/
 if (!COOKIE.flwurlVal) {
   if ($.isNode()) {
     Object.keys(middleflwURL).forEach((item) => {
@@ -227,7 +229,7 @@ if (!COOKIE.flwurlVal) {
     Length =0
       }else Length = flwurlArr.length
 }
-  
+
 
 function GetCookie() {
   //返利登录
