@@ -2,11 +2,8 @@
 tgchannel：https://t.me/ZhiYi_Script
 github：https://github.com/ZhiYi-N/script
 boxjs：https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/ZhiYi-N.boxjs.json
-转载留个名字，谢谢
-邀请码：AU6GW
-谢谢
 作者：执意ZhiYi-N
-#看一个视频弹出金币获取ck
+#看一个视频弹出金币获取ck，本脚本只供学习使用，请勿滥用，下载24小时内请删除
 
 [mitm]
 hostname = *.huoshan.com
@@ -124,19 +121,13 @@ if (process.env.PLAYURL && process.env.PLAYURL.indexOf('#') > -1) {
   };
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
-hsurlArr.push(hsurl)
-    hsheaderArr.push(hsheader)
-    hsbodyArr.push(hsbody)
-    playurlArr.push(playurl)
-    playheaderArr.push(playheader)
-    playbodyArr.push(playbody)
  } else {
-    hsurlArr.push($.getdata(`hsurl`))
-    hsheaderArr.push($.getdata(`hsheader`))
-    hsbodyArr.push($.getdata(`hsbody`))
-    playurlArr.push($.getdata(`playurl`))
-playheaderArr.push($.getdata(`playheader`))
-    playbodyArr.push($.getdata(`playbody`))
+    hsurlArr.push($.getdata('hsurl'))
+    hsheaderArr.push($.getdata('hsheader'))
+    hsbodyArr.push($.getdata('hsbody'))
+    playurlArr.push($.getdata('playurl'))
+    playheaderArr.push($.getdata('playheader'))
+    playbodyArr.push($.getdata('playbody'))
     let hscount = ($.getval('hscount') || '1');
   for (let i = 2; i <= hscount; i++) {
 	hsurlArr.push($.getdata(`hsurl${i}`))
@@ -157,12 +148,12 @@ if (!hsheaderArr[0] && !hsbodyArr[0] && !hsurlArr[0]) {
     if (hsheaderArr[i]) {
       message = ''
       note = ''
-      // hsurl = hsurlArr[i];
-      // hsheader = hsheaderArr[i];
-      // hsbody = hsbodyArr[i];
-      // playurl = playurlArr[i];
-      // playheader = playheaderArr[i];
-      // playbody = playbodyArr[i];
+      hsurl = hsurlArr[i];
+      hsheader = hsheaderArr[i];
+      hsbody = hsbodyArr[i];
+      playurl = playurlArr[i];
+      playheader = playheaderArr[i];
+      playbody = playbodyArr[i];
       $.index = i + 1;
       console.log(`\n开始【抖音火山版${$.index}】`)
       //await ck()
