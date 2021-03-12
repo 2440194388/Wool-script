@@ -155,7 +155,7 @@ if (!hsheaderArr[0] && !hsbodyArr[0] && !hsurlArr[0]) {
       message = ''
       note = ''
       hsurl = hsurlArr[i];
-      hsheader = hsheaderArr[i];
+      var hsheader = hsheaderArr[i];
       hsbody = hsbodyArr[i];
       playurl = playurlArr[i];
       playheader = playheaderArr[i];
@@ -236,7 +236,7 @@ for(let i = 0;i <= 4;i++){
 //app_alert_check
 async function app_alert_check(){
 let new_time = Math.round(new Date().getTime()/1000).toString();
-var hsheader = hsheader.replace(/X-Khronos":"\d{10}/,`X-Khronos":"${new_time}`)
+hsheader = hsheader.replace(/X-Khronos":"\d{10}/,`X-Khronos":"${new_time}`)
 let iid = hsurl.match(/iid=\d+/)
 let idfa = hsurl.match(/idfa=\d+-\d+-\w+-\w+-\w+/)
 let vid = hsurl.match(/vid=\w+-\w+-\w+-\w+-\w+/)
