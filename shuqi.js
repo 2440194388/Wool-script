@@ -125,6 +125,7 @@ const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点
 $.message = '', COOKIES_SPLIT = '', CASH = '', XH = 0, ddtime = '';
 CZ = 10
 Length = 0
+let userid='';
 let shuqiuserurlArr = [];
 let shuqisyurlArr = [];
 let shuqisybodyArr = [];
