@@ -428,6 +428,32 @@ if ($.isNode() && process.env.SQ_shuqiuserURL) {
     } else {
         middleshuqijssprwURL = process.env.SQ_shuqijssprwURL.split();
     }
+    shuqiuserurlArr.push(middleshuqiuserURL);
+        shuqisyurlArr.push(middleshuqisyURL);
+        shuqisybodyArr.push(middlshuqisyBODY);
+        shuqispbodyArr.push(middleshuqispBODY);
+        shuqiscbodyArr.push(middleshuqiscBODY);
+        shuqiydbodyArr.push(middleshuqiydBODY);
+        shuqiqdbodyArr.push(middleshuqiqdBODY);
+        shuqirwbodyArr.push(middleshuqirwBODY);
+        shuqifxbodyArr.push(middleshuqifxBODY);
+        shuqisprwurlArr.push(middleshuqisprwURL);
+        shuqijlbodyArr.push(middleshuqijlBODY);
+        shuqisqjlbodyArr.push(middleshuqisqjlBODY);
+        shuqicjyurlArr.push(middleshuqicjyURL);
+        shuqicjcsbodyArr.push(middleshuqicjcsBODY);
+        shuqicjbodyArr.push(middleshuqicjBODY);
+        shuqijsspbodyArr.push(middleshuqijsspBODY);
+        shuqijsydurlArr.push(middleshuqijsydURL);
+        shuqijsydbodyArr.push(middleshuqijsydBODY);
+        shuqijsqdbodyArr.push(middleshuqijsqdBODY);
+        shuqijsqdspyurlArr.push(middleshuqijsqdspyURL);
+        shuqijsqdspbodyArr.push(middleshuqijsqdspBODY);
+        shuqijsrwbodyArr.push(middleshuqijsrwBODY);
+        shuqijsfxbodyArr.push(middleshuqijsfxBODY);
+        shuqijsbookurlArr.push(middleshuqijsbookURL);
+        shuqijsbookbodyArr.push(middleshuqijsbookBODY);
+        shuqijssprwurlArr.push(middleshuqijssprwURL);
 }
 if (COOKIE && COOKIE.shuqiuserurlVal) {
     if (!COOKIE.shuqijsspbodyVal || COOKIE.shuqijsspbodyVal == '') {
