@@ -115,42 +115,42 @@ http-request https:\/\/jcollection\.shuqireader\.com\/* url script-request-body 
 
 */
 GXRZ = '3.12-5 去除无用任务，精简ck至26条'
-const $ = Env("书旗小说");
+let $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
-const notify = $.isNode() ? require("./sendNotify") : ``;
-const COOKIE = $.isNode() ? require("./shuqiCOOKIE") : ``;
-const logs = 0; // 0为关闭日志，1为开启
-const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
-const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
+let notify = $.isNode() ? require("./sendNotify") : ``;
+let COOKIE = $.isNode() ? require("./shuqiCOOKIE") : ``;
+let logs = 0; // 0为关闭日志，1为开启
+let notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
+let notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 $.message = '', COOKIES_SPLIT = '', CASH = '', XH = 0, ddtime = '';
 CZ = 10
 Length = 0
-const shuqiuserurlArr = [];
-const shuqisyurlArr = [];
-const shuqisybodyArr = [];
-const shuqispbodyArr = [];
-const shuqiscbodyArr = [];
-const shuqiydbodyArr = [];
-const shuqiqdbodyArr = [];
-const shuqirwbodyArr = [];
-const shuqifxbodyArr = [];
-const shuqisprwurlArr = [];
-const shuqijlbodyArr = [];
-const shuqisqjlbodyArr = [];
-const shuqicjyurlArr = [];
-const shuqicjcsbodyArr = [];
-const shuqicjbodyArr = [];
-const shuqijsspbodyArr = [];
-const shuqijsydurlArr = [];
-const shuqijsydbodyArr = [];
-const shuqijsqdbodyArr = [];
-const shuqijsqdspyurlArr = [];
-const shuqijsqdspbodyArr = [];
-const shuqijsrwbodyArr = [];
-const shuqijsfxbodyArr = [];
-const shuqijsbookurlArr = [];
-const shuqijsbookbodyArr = [];
-const shuqijssprwurlArr = [];
+let shuqiuserurlArr = [];
+let shuqisyurlArr = [];
+let shuqisybodyArr = [];
+let shuqispbodyArr = [];
+let shuqiscbodyArr = [];
+let shuqiydbodyArr = [];
+let shuqiqdbodyArr = [];
+let shuqirwbodyArr = [];
+let shuqifxbodyArr = [];
+let shuqisprwurlArr = [];
+let shuqijlbodyArr = [];
+let shuqisqjlbodyArr = [];
+let shuqicjyurlArr = [];
+let shuqicjcsbodyArr = [];
+let shuqicjbodyArr = [];
+let shuqijsspbodyArr = [];
+let shuqijsydurlArr = [];
+let shuqijsydbodyArr = [];
+let shuqijsqdbodyArr = [];
+let shuqijsqdspyurlArr = [];
+let shuqijsqdspbodyArr = [];
+let shuqijsrwbodyArr = [];
+let shuqijsfxbodyArr = [];
+let shuqijsbookurlArr = [];
+let shuqijsbookbodyArr = [];
+let shuqijssprwurlArr = [];
 let shuqiuserurlVal = ``;
 let shuqisyurlVal = ``;
 let shuqisybodyVal = ``;
@@ -177,32 +177,32 @@ let shuqijsfxbodyVal = ``;
 let shuqijsbookurlVal = ``;
 let shuqijsbookbodyVal = ``;
 let shuqijssprwurlVal = ``;
-const middleshuqiuserURL = [];
-const middleshuqisyURL = [];
-const middleshuqisyBODY = [];
-const middleshuqispBODY = [];
-const middleshuqiscBODY = [];
-const middleshuqiydBODY = [];
-const middleshuqiqdBODY = [];
-const middleshuqirwBODY = [];
-const middleshuqifxBODY = [];
-const middleshuqisprwURL = [];
-const middleshuqijlBODY = [];
-const middleshuqisqjlBODY = [];
-const middleshuqicjyURL = [];
-const middleshuqicjcsBODY = [];
-const middleshuqicjBODY = [];
-const middleshuqijsspBODY = [];
-const middleshuqijsydURL = [];
-const middleshuqijsydBODY = [];
-const middleshuqijsqdBODY = [];
-const middleshuqijsqdspyURL = [];
-const middleshuqijsqdspBODY = [];
-const middleshuqijsrwBODY = [];
-const middleshuqijsfxBODY = [];
-const middleshuqijsbookURL = [];
-const middleshuqijsbookBODY = [];
-const middleshuqijssprwURL = [];
+let middleshuqiuserURL = [];
+let middleshuqisyURL = [];
+let middleshuqisyBODY = [];
+let middleshuqispBODY = [];
+let middleshuqiscBODY = [];
+let middleshuqiydBODY = [];
+let middleshuqiqdBODY = [];
+let middleshuqirwBODY = [];
+let middleshuqifxBODY = [];
+let middleshuqisprwURL = [];
+let middleshuqijlBODY = [];
+let middleshuqisqjlBODY = [];
+let middleshuqicjyURL = [];
+let middleshuqicjcsBODY = [];
+let middleshuqicjBODY = [];
+let middleshuqijsspBODY = [];
+let middleshuqijsydURL = [];
+let middleshuqijsydBODY = [];
+let middleshuqijsqdBODY = [];
+let middleshuqijsqdspyURL = [];
+let middleshuqijsqdspBODY = [];
+let middleshuqijsrwBODY = [];
+let middleshuqijsfxBODY = [];
+let middleshuqijsbookURL = [];
+let middleshuqijsbookBODY = [];
+let middleshuqijssprwURL = [];
 if ($.isNode() && COOKIE.shuqiuserurl && COOKIE.shuqiuserurl != '') {
     console.log(
         `============ cookie方式为：方式一 boxjs复制数据 =============\n`
@@ -688,7 +688,7 @@ if (!COOKIE) {
 function GetCookie() {
     //获取极速版书城
     if ($request && $request.url.indexOf("activity-center-web") >= 0 && $request.url.indexOf("reward") >= 0) {
-        const shuqijsbookurlVal = $request.url;
+        let shuqijsbookurlVal = $request.url;
         if (shuqijsbookurlVal) {
             if (XH == 1) {
                 cookie()
@@ -724,7 +724,7 @@ function GetCookie() {
     }
     //获取极速版视频任务
     if ($request && $request.url.indexOf("getAdInfo") >= 0 && $request.url.indexOf("resourceId=719") >= 0 && $request.url.indexOf("appVer=1") >= 0) {
-        const shuqijssprwurlVal = $request.url;
+        let shuqijssprwurlVal = $request.url;
         if (shuqijssprwurlVal) {
             if (XH == 1) {
                 cookie()
@@ -760,7 +760,7 @@ function GetCookie() {
     }
     //获取抽奖页面
     if ($request && $request.url.indexOf("lottery") >= 0 && $request.url.indexOf("info") >= 0) {
-        const shuqicjyurlVal = $request.url;
+        let shuqicjyurlVal = $request.url;
         if (shuqicjyurlVal) {
             if (XH == 1) {
                 cookie()
@@ -796,7 +796,7 @@ function GetCookie() {
     }
     //获取极速版签到视频页
     if ($request && $request.url.indexOf("adserver") >= 0 && $request.url.indexOf("getAdInfo") >= 0 && $request.url.indexOf("resourceId=717") >= 0) {
-        const shuqijsqdspyurlVal = $request.url;
+        let shuqijsqdspyurlVal = $request.url;
         if (shuqijsqdspyurlVal) {
             if (XH == 1) {
                 cookie()
@@ -832,7 +832,7 @@ function GetCookie() {
     }
     //获取视频任务
     if ($request && $request.url.indexOf("adserver") >= 0 && $request.url.indexOf("getAdInfo") >= 0 && $request.url.indexOf("resourceId=626") >= 0) {
-        const shuqisprwurlVal = $request.url;
+        let shuqisprwurlVal = $request.url;
         if (shuqisprwurlVal) {
             if (XH == 1) {
                 cookie()
@@ -868,7 +868,7 @@ function GetCookie() {
     }
     //获取用户名
     if ($request && $request.url.indexOf("getBindinfo") >= 0) {
-        const shuqiuserurlVal = $request.url;
+        let shuqiuserurlVal = $request.url;
         if (shuqiuserurlVal) {
             if (XH == 1) {
                 cookie()
@@ -904,8 +904,8 @@ function GetCookie() {
     }
     //获取收益
     if ($request && $request.url.indexOf("load") >= 0 && $request.url.indexOf("resource") >= 0 && $request.url.indexOf("skinColor=") >= 0 && $request.url.indexOf("appVer=4") >= 0 && $request.body.indexOf("isNewUser") >= 0 && $request.body.indexOf("ShuqiVipEntry") >= 0 && $request.body.indexOf("ShuqiTab") < 0 && $request.body.indexOf("caid=") < 0 && $request.body.indexOf("ShuqiShelfCard") < 0 && $request.body.indexOf("ShuqiIOSUpdateInfo") < 0) {
-        const shuqisyurlVal = $request.url
-        const shuqisybodyVal = $request.body
+        let shuqisyurlVal = $request.url
+        let shuqisybodyVal = $request.body
         if (shuqisyurlVal) {
             if (XH == 1) {
                 cookie()
@@ -951,7 +951,7 @@ function GetCookie() {
     }
     //获取视频
     if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("deliveryId=525") >= 0) {
-        const shuqispbodyVal = $request.body;
+        let shuqispbodyVal = $request.body;
         if (shuqispbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -987,7 +987,7 @@ function GetCookie() {
     }
     //获取时长
     if ($request && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0 && $request.body.indexOf("_public=skinId") >= 0) {
-        const shuqiscbodyVal = $request.body;
+        let shuqiscbodyVal = $request.body;
         if (shuqiscbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1023,7 +1023,7 @@ function GetCookie() {
     }
     //获取阅读
     if ($request && $request.url.indexOf("pendant") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("deliveryId=707") >= 0) {
-        const shuqiydbodyVal = $request.body;
+        let shuqiydbodyVal = $request.body;
         if (shuqiydbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1059,7 +1059,7 @@ function GetCookie() {
     }
     //获取签到
     if ($request && $request.url.indexOf("signInAction") >= 0 && $request.body.indexOf("position=501") >= 0 && $request.body.indexOf("signInType=1") >= 0) {
-        const shuqiqdbodyVal = $request.body;
+        let shuqiqdbodyVal = $request.body;
         if (shuqiqdbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1095,7 +1095,7 @@ function GetCookie() {
     }
     //获取任务
     if ($request && $request.url.indexOf("resource") >= 0 && $request.body.indexOf("resources") >= 0 && $request.body.indexOf("params=") >= 0 && $request.body.indexOf("appVer=4") >= 0 && $request.body.indexOf("skinVersionPrefix=") >= 0 && $request.body.indexOf("isNewUser=") < 0 && $request.body.indexOf("reqEncryptType=") < 0) {
-        const shuqirwbodyVal = $request.body;
+        let shuqirwbodyVal = $request.body;
         if (shuqirwbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1131,7 +1131,7 @@ function GetCookie() {
     }
     //获取分享
     if ($request && $request.url.indexOf("activity") >= 0 && $request.url.indexOf("reward") >= 0 && $request.body.indexOf("actTaskId=304") >= 0) {
-        const shuqifxbodyVal = $request.body;
+        let shuqifxbodyVal = $request.body;
         if (shuqifxbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1167,7 +1167,7 @@ function GetCookie() {
     }
     //获取奖励
     if ($request && $request.url.indexOf("bubble") >= 0 && $request.url.indexOf("info") >= 0 && $request.body.indexOf("requestSrc=h5") >= 0) {
-        const shuqijlbodyVal = $request.body;
+        let shuqijlbodyVal = $request.body;
         if (shuqijlbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1203,7 +1203,7 @@ function GetCookie() {
     }
     //获取收取奖励
     if ($request && $request.url.indexOf("manual") >= 0 && $request.url.indexOf("receive") >= 0 && $request.body.indexOf("appVer=4") >= 0) {
-        const shuqisqjlbodyVal = $request.body;
+        let shuqisqjlbodyVal = $request.body;
         if (shuqisqjlbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1239,7 +1239,7 @@ function GetCookie() {
     }
     //获取抽奖次数
     if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("resourceId=703") >= 0) {
-        const shuqicjcsbodyVal = $request.body;
+        let shuqicjcsbodyVal = $request.body;
         if (shuqicjcsbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1275,7 +1275,7 @@ function GetCookie() {
     }
     //获取抽奖
     if ($request && $request.url.indexOf("lottery") >= 0 && $request.url.indexOf("draw") >= 0 && $request.body.indexOf("activityId=311") >= 0) {
-        const shuqicjbodyVal = $request.body;
+        let shuqicjbodyVal = $request.body;
         if (shuqicjbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1311,7 +1311,7 @@ function GetCookie() {
     }
     //获取极速版视频
     if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("resourceId=719") >= 0) {
-        const shuqijsspbodyVal = $request.body;
+        let shuqijsspbodyVal = $request.body;
         if (shuqijsspbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1347,7 +1347,7 @@ function GetCookie() {
     }
     //获取极速版签到视频
     if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("deliveryId=894") >= 0) {
-        const shuqijsqdspbodyVal = $request.body;
+        let shuqijsqdspbodyVal = $request.body;
         if (shuqijsqdspbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1383,8 +1383,8 @@ function GetCookie() {
     }
     //获取极速版阅读
     if ($request && $request.url.indexOf("activity") >= 0 && $request.url.indexOf("pendant") >= 0 && $request.url.indexOf("lottery") >= 0) {
-        const shuqijsydurlVal = $request.url;
-        const shuqijsydbodyVal = $request.body;
+        let shuqijsydurlVal = $request.url;
+        let shuqijsydbodyVal = $request.body;
         if (shuqijsydurlVal) {
             if (XH == 1) {
                 cookie()
@@ -1430,7 +1430,7 @@ function GetCookie() {
     }
     //获取极速版签到
     if ($request && $request.url.indexOf("signInAction") >= 0 && $request.body.indexOf("position=601") >= 0 && $request.body.indexOf("signInType=1") >= 0) {
-        const shuqijsqdbodyVal = $request.body;
+        let shuqijsqdbodyVal = $request.body;
         if (shuqijsqdbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1466,7 +1466,7 @@ function GetCookie() {
     }
     //获取极速版任务
     if ($request && $request.url.indexOf("resource") >= 0 && $request.body.indexOf("resources") >= 0 && $request.body.indexOf("params=") >= 0 && $request.body.indexOf("appVer=1") >= 0 && $request.body.indexOf("skinVersionPrefix=") < 0 && $request.body.indexOf("isNewUser=") < 0 && $request.body.indexOf("reqEncryptType=") < 0) {
-        const shuqijsrwbodyVal = $request.body;
+        let shuqijsrwbodyVal = $request.body;
         if (shuqijsrwbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1502,7 +1502,7 @@ function GetCookie() {
     }
     //获取极速版分享
     if ($request && $request.body.indexOf("actTaskId=327") >= 0 && $request.body.indexOf("appVer=1") >= 0) {
-        const shuqijsfxbodyVal = $request.body;
+        let shuqijsfxbodyVal = $request.body;
         if (shuqijsfxbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1538,7 +1538,7 @@ function GetCookie() {
     }
     //获取极速版书城
     if ($request && $request.url.indexOf("convert") >= 0 && $request.body.indexOf("actTaskId=344") >= 0 && $request.body.indexOf("appVer=1") >= 0) {
-        const shuqijsbookbodyVal = $request.body;
+        let shuqijsbookbodyVal = $request.body;
         if (shuqijsbookbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -2733,7 +2733,7 @@ function jsvideolist(timeout = 0) {
 // prettier-ignore
 function Env(t, e) {
     class s {
-        constructor(t) {
+        letructor(t) {
             this.env = t
         }
         send(t, e = "GET") {
@@ -2755,7 +2755,7 @@ function Env(t, e) {
         }
     }
     return new class {
-        constructor(t, e) {
+        letructor(t, e) {
             this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log(``, `\ud83d\udd14${this.name}, \u5f00\u59cb!`)
         }
         isNode() {
@@ -2786,7 +2786,7 @@ function Env(t, e) {
         }
         getjson(t, e) {
             let s = e;
-            const i = this.getdata(t);
+            let i = this.getdata(t);
             if (i) try {
                 s = JSON.parse(this.getdata(t))
             } catch {}
@@ -2812,7 +2812,7 @@ function Env(t, e) {
                 i = i ? i.replace(/\n/g, ``).trim() : i;
                 let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");
                 r = r ? 1 * r : 20, r = e && e.timeout ? e.timeout : r;
-                const [o, h] = i.split("@"), a = {
+                let [o, h] = i.split("@"), a = {
                     url: `http://${h}/v1/scripting/evaluate`,
                     body: {
                         script_text: t,
@@ -2830,12 +2830,12 @@ function Env(t, e) {
         loaddata() {
             if (!this.isNode()) return {}; {
                 this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path");
-                const t = this.path.resolve(this.dataFile),
+                let t = this.path.resolve(this.dataFile),
                     e = this.path.resolve(process.cwd(), this.dataFile),
                     s = this.fs.existsSync(t),
                     i = !s && this.fs.existsSync(e);
                 if (!s && !i) return {}; {
-                    const i = s ? t : e;
+                    let i = s ? t : e;
                     try {
                         return JSON.parse(this.fs.readFileSync(i))
                     } catch (t) {
@@ -2847,7 +2847,7 @@ function Env(t, e) {
         writedata() {
             if (this.isNode()) {
                 this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path");
-                const t = this.path.resolve(this.dataFile),
+                let t = this.path.resolve(this.dataFile),
                     e = this.path.resolve(process.cwd(), this.dataFile),
                     s = this.fs.existsSync(t),
                     i = !s && this.fs.existsSync(e),
@@ -2856,9 +2856,9 @@ function Env(t, e) {
             }
         }
         lodash_get(t, e, s) {
-            const i = e.replace(/\[(\d+)\]/g, ".$1").split(".");
+            let i = e.replace(/\[(\d+)\]/g, ".$1").split(".");
             let r = t;
-            for (const t of i)
+            for (let t of i)
                 if (r = Object(r)[t], void 0 === r) return s;
             return r
         }
@@ -2868,9 +2868,9 @@ function Env(t, e) {
         getdata(t) {
             let e = this.getval(t);
             if (/^@/.test(t)) {
-                const [, s, i] = /^@(.*?)\.(.*?)$/.exec(t), r = s ? this.getval(s) : ``;
+                let [, s, i] = /^@(.*?)\.(.*?)$/.exec(t), r = s ? this.getval(s) : ``;
                 if (r) try {
-                    const t = JSON.parse(r);
+                    let t = JSON.parse(r);
                     e = t ? this.lodash_get(t, i, ``) : e
                 } catch (t) {
                     e = ``
@@ -2881,12 +2881,12 @@ function Env(t, e) {
         setdata(t, e) {
             let s = !1;
             if (/^@/.test(e)) {
-                const [, i, r] = /^@(.*?)\.(.*?)$/.exec(e), o = this.getval(i), h = i ? "null" === o ? null : o || "{}" : "{}";
+                let [, i, r] = /^@(.*?)\.(.*?)$/.exec(e), o = this.getval(i), h = i ? "null" === o ? null : o || "{}" : "{}";
                 try {
-                    const e = JSON.parse(h);
+                    let e = JSON.parse(h);
                     this.lodash_set(e, r, t), s = this.setval(JSON.stringify(e), i)
                 } catch (e) {
-                    const o = {};
+                    let o = {};
                     this.lodash_set(o, r, t), s = this.setval(JSON.stringify(o), i)
                 }
             } else s = this.setval(t, e);
@@ -2909,7 +2909,7 @@ function Env(t, e) {
             })) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
                 hints: !1
             })), $task.fetch(t).then(t => {
-                const {
+                let {
                     statusCode: s,
                     statusCode: i,
                     headers: r,
@@ -2924,14 +2924,14 @@ function Env(t, e) {
             }, t => e(t))) : this.isNode() && (this.initGotEnv(t), this.got(t).on("redirect", (t, e) => {
                 try {
                     if (t.headers["set-cookie"]) {
-                        const s = t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();
+                        let s = t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();
                         this.ckjar.setCookieSync(s, null), e.cookieJar = this.ckjar
                     }
                 } catch (t) {
                     this.logErr(t)
                 }
             }).then(t => {
-                const {
+                let {
                     statusCode: s,
                     statusCode: i,
                     headers: r,
@@ -2944,7 +2944,7 @@ function Env(t, e) {
                     body: o
                 }, o)
             }, t => {
-                const {
+                let {
                     message: s,
                     response: i
                 } = t;
@@ -2960,7 +2960,7 @@ function Env(t, e) {
             else if (this.isQuanX()) t.method = "POST", this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
                 hints: !1
             })), $task.fetch(t).then(t => {
-                const {
+                let {
                     statusCode: s,
                     statusCode: i,
                     headers: r,
@@ -2975,12 +2975,12 @@ function Env(t, e) {
             }, t => e(t));
             else if (this.isNode()) {
                 this.initGotEnv(t);
-                const {
+                let {
                     url: s,
                     ...i
                 } = t;
                 this.got.post(s, i).then(t => {
-                    const {
+                    let {
                         statusCode: s,
                         statusCode: i,
                         headers: r,
@@ -2993,7 +2993,7 @@ function Env(t, e) {
                         body: o
                     }, o)
                 }, t => {
-                    const {
+                    let {
                         message: s,
                         response: i
                     } = t;
@@ -3016,7 +3016,7 @@ function Env(t, e) {
             return t
         }
         msg(e = t, s = ``, i = ``, r) {
-            const o = t => {
+            let o = t => {
                 if (!t) return t;
                 if ("string" == typeof t) return this.isLoon() ? t : this.isQuanX() ? {
                     "open-url": t
@@ -3056,14 +3056,14 @@ function Env(t, e) {
             t.length > 0 && (this.logs = [...this.logs, ...t]), console.log(t.join(this.logSeparator))
         }
         logErr(t, e) {
-            const s = !this.isSurge() && !this.isQuanX() && !this.isLoon();
+            let s = !this.isSurge() && !this.isQuanX() && !this.isLoon();
             s ? this.log(``, `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t.stack) : this.log(``, `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t)
         }
         wait(t) {
             return new Promise(e => setTimeout(e, t))
         }
         done(t = {}) {
-            const e = (new Date).getTime(),
+            let e = (new Date).getTime(),
                 s = (e - this.startTime) / 1e3;
             this.log(``, `\ud83d\udd14${this.name}, \u7ed3\u675f! \ud83d\udd5b ${s} \u79d2`), this.log(), (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t)
         }
