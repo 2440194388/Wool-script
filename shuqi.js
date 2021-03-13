@@ -430,7 +430,7 @@ if ($.isNode() && process.env.SQ_shuqiuserURL) {
     }
     shuqiuserurlArr.push(middleshuqiuserURL);
         shuqisyurlArr.push(middleshuqisyURL);
-        shuqisybodyArr.push(middlshuqisyBODY);
+        shuqisybodyArr.push(middleshuqisyBODY);
         shuqispbodyArr.push(middleshuqispBODY);
         shuqiscbodyArr.push(middleshuqiscBODY);
         shuqiydbodyArr.push(middleshuqiydBODY);
