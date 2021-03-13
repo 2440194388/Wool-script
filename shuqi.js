@@ -684,7 +684,7 @@ if (!COOKIE) {
         Length = 0
     } else Length = shuqiuserurlArr.length
 }
-if (!shuqiuserurlArr || shuqiuserurlArr == '') {
+if (!middleshuqiuserURL || middleshuqiuserURL == '') {
     Length = 0
 } else {
     shuqiuserurlArr.push(middleshuqiuserURL);
