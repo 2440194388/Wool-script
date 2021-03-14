@@ -80,9 +80,9 @@ let sdid = '';sdlqid = '';tc = 0
     cfzsbhdArr.push($.getdata(`cfzsbhd${i}`))
   }
   if (process.env.CFZ_url && process.env.CFZ_url.indexOf('\n') > -1) {
-    cfzhdArr.push(process.env.CFZ_url.split('\n'))
+    cfzurlArr.push(process.env.CFZ_url.split('\n'))
     } else {
-      cfzhdArr.push(process.env.CFZ_url.split())
+      cfzurlArr.push(process.env.CFZ_url.split())
     };
   
     if (process.env.CFZ_sbhd && process.env.CFZ_sbhd.indexOf('\n') > -1) {
