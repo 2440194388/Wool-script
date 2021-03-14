@@ -70,15 +70,17 @@ let sdid = '';sdlqid = '';tc = 0
   if (typeof $request !== "undefined") {
     await cfzck()
    
-  } else {cfzurlArr.push($.getdata('cfzurl'))
-    cfzhdArr.push($.getdata('cfzhd'))
-    cfzsbhdArr.push($.getdata('cfzsbhd'))
+  } else {
+    // cfzurlArr.push($.getdata('cfzurl'))
+    // cfzhdArr.push($.getdata('cfzhd'))
+    // cfzsbhdArr.push($.getdata('cfzsbhd'))
     let cfzcount = ($.getval('cfzcount') || '1');
   for (let i = 2; i <= cfzcount; i++) {
     cfzurlArr.push($.getdata(`cfzurl${i}`))
     cfzhdArr.push($.getdata(`cfzhd${i}`))
     cfzsbhdArr.push($.getdata(`cfzsbhd${i}`))
   }
+
   if (process.env.CFZ_url && process.env.CFZ_url.indexOf('\n') > -1) {
     cfzurlArr.push(process.env.CFZ_url.split('\n'))
     } else {
@@ -86,9 +88,9 @@ let sdid = '';sdlqid = '';tc = 0
     };
   
     if (process.env.CFZ_sbhd && process.env.CFZ_sbhd.indexOf('\n') > -1) {
-    cfzsbhdArr.push(process.env.CFZ_sbhd.split('\n'))
+      cfzhdArr.push(process.env.CFZ_sbhd.split('\n'))
     } else {
-      cfzsbhdArr.push(process.env.CFZ_sbhd.split())
+      cfzhdArr.push(process.env.CFZ_sbhd.split())
     };
     let execAcList = [];
     let slot = cfzhdArr.length % concurrency == 0 ? cfzhdArr.length / concurrency : parseInt(cfzhdArr.length / concurrency) + 1;
