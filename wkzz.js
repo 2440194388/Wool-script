@@ -73,7 +73,6 @@ let wkzzkey = '', id = '', uid = '', tid = '', name = ''
 
   }
   let wkzzcount = ($.getval('wkzzcount') || '1');
-  if (process.env.wkzz_url && process.env.wkzz_url.indexOf('\n') > -1) {
     if (process.env.wkzz_url && process.env.wkzz_url.indexOf('\n') > -1) {
       wkzzurlArr.push(process.env.wkzz_url.split('\n'))
     } else {
@@ -85,7 +84,6 @@ let wkzzkey = '', id = '', uid = '', tid = '', name = ''
     } else {
       wkzzhdArr.push(process.env.wkzz_hd.split())
     };
-  }
   console.log(wkzzhdArr.length)
   if (wkzzhdArr[0] == 'wkzz') {
     await wkzzhqck()
