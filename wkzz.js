@@ -85,6 +85,7 @@ let wkzzkey = '', id = '', uid = '', tid = '', name = ''
       wkzzhdArr.push(process.env.wkzz_hd.split())
     };
   }
+  console.log(wkzzhdArr[0])
   if (wkzzhdArr[0] == 'wkzz') {
     await wkzzhqck()
     console.log(`------------- 共${wkzzhdArr.length}个账号-------------\n`)
