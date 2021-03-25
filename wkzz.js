@@ -61,7 +61,8 @@ hostname = wx.tiantianaiyuedu.site
 const $ = new Env('微客众智自动阅读');
 let status;
 status = (status = ($.getval("wkzzstatus") || "1")) > 1 ? `${status}` : ""; // 账号扩展字符
-const wkzzurlArr = [], wkzzhdArr = [], wkzzcount = '',xx = "Basic MTM5MDY0MTAzNUBxcS5jb206YWhncnJlYmpybjRzZjRzYw=="
+const wkzzurlArr = [], wkzzhdArr = [], wkzzcount = ''
+var xx = "Basic MTM5MDY0MTAzNUBxcS5jb206YWhncnJlYmpybjRzZjRzYw=="
 let times = Math.round(Date.now() / 1000)
 let wkzzurl = $.getdata('wkzzurl')
 let wkzzhd = $.getdata('wkzzhd')
@@ -85,7 +86,7 @@ let wkzzkey = '', id = '', uid = '', tid = '', name = ''
       wkzzhdArr.push(process.env.wkzz_hd.split())
     };
   }
-  console.log(wkzzhdArr[1])
+  console.log(wkzzhdArr.length)
   if (wkzzhdArr[0] == 'wkzz') {
     await wkzzhqck()
     console.log(`------------- 共${wkzzhdArr.length}个账号-------------\n`)
