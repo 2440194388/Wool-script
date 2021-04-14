@@ -45,10 +45,7 @@ let times = Math.round(Date.now() / 1000)
 let mmdzzurl = $.getdata('mmdzzurl')
 let mmdzzhd = $.getdata('mmdzzhd')
 !(async () => {
-  if (typeof $request !== "undefined") {
-    await mmdzzck()
-   
-  } else if (process.env.MMDZZURL && process.env.MMDZZURL.indexOf('\n') > -1){
+  if (process.env.MMDZZURL && process.env.MMDZZURL.indexOf('\n') > -1){
   /*
   else {mmdzzurlArr.push($.getdata('mmdzzurl'))
     mmdzzhdArr.push($.getdata('mmdzzhd'))
