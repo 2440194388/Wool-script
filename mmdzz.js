@@ -45,7 +45,7 @@ let times = Math.round(Date.now() / 1000)
 let mmdzzurl = $.getdata('mmdzzurl')
 let mmdzzhd = $.getdata('mmdzzhd')
 !(async () => {
-  if (process.env.MMDZZURL && process.env.MMDZZURL.indexOf('\n') > -1){
+  if (process.env.MMDZZURL){
   /*
   else {mmdzzurlArr.push($.getdata('mmdzzurl'))
     mmdzzhdArr.push($.getdata('mmdzzhd'))
@@ -55,13 +55,10 @@ let mmdzzhd = $.getdata('mmdzzhd')
     mmdzzhdArr.push($.getdata(`mmdzzhd${i}`))
   }
   */
-    
-    mmdzzurlArr.push( process.env.MMDZZURL.split('\n'));
-    console.log(`您选择的是用"#"隔开\n`)
-   
-   if (process.env.MMDZZHD && process.env.MMDZZHD.indexOf('\n') > -1) {
-    mmdzzhdArr.push( process.env.MMDZZHD.split('\n'));
-    console.log(`您选择的是用"#"隔开\n`)
+    let mmdzzcount = '1'
+    mmdzzurlArr.push(process.env.MMDZZURL.split());
+   if (process.env.MMDZZHD) {
+    mmdzzhdArr.push( process.env.MMDZZHD.split());
    }
     console.log(`------------- 共${mmdzzhdArr.length}个账号-------------\n`)
       for (let i = 0; i < mmdzzhdArr.length; i++) {
