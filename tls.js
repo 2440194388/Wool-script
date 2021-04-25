@@ -222,7 +222,6 @@ function tlsurl111() {
           } else {
             if (data) {
                 tlsurlArr.push(data)
-                console.log(tlsurlArr)
             }
           }
         } catch (e) {
@@ -248,7 +247,6 @@ function tlsurl111() {
           } else {
             if (data) {
                 tlsheaderArr.push(data)
-                console.log(tlsheaderArr)
             }
           }
         } catch (e) {
