@@ -80,18 +80,16 @@ const sphd = {
     console.log(`------------- 共${scdcghdArr.length}个账号-------------\n`)
       for (let i = 0; i < scdcghdArr.length; i++) {
         if (scdcghdArr[i]) {
-          scdcghd = scdcghdArr[i];
-          scdcgbody = scdcgbodyArr[i];
-          scdcgspbody = scdcgspbodyArr[i];
+          //scdcghd = process.env.scdcghd
+          //scdcgbody = process.env.scdcgbody
+          //scdcgspbody = process.env.scdcgspbody
+          scdcghd = String(scdcghdArr[i]);
+          scdcgbody = String(scdcgbodyArr[i]);
+          scdcgspbody = String(scdcgspbodyArr[i]);
           $.index = i + 1;
           console.log(`\n开始【食材大冲关${$.index}】`)
-   
-    
          await scdcgsp();
          
-
-    
-    
   }
 }}
 
@@ -153,7 +151,6 @@ await scdcgsp();
 
 function scdcgsp(timeout = 0) {
   return new Promise((resolve) => {
-
 let url = {
         url : 'https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/',
         headers : sphd,
